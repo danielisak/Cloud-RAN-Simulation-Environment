@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sdnc-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sdnc
+  template:
+    metadata:
+      labels:
+        app: sdnc
+    spec:
+      containers:
+      - name: sdnc
+        image: lidfeldt/sdnc:linuxv2.0
+        imagePullPolicy: Always
+        env:
+        - name: SERVICE_HOST_ENV_NAME
+          value: "10.10.0.101"
+        - name: SERVICE_PORT_ENV_NAME
+          value: "6443"
+        - name: SDNC_CONTROL_INTERVAL
+          value: "2"
+        - name: GOLD_MARGIN
+          value: "0.1"
+        - name: SILVER_MARGIN
+          value: "0.1"
+        - name: BRONZE_MARGIN
+          value: "0.1"
+        # securityContext:
+        #   capabilities:
+        #     add: [NET_ADMIN]
+      serviceAccountName: sdnc-svc-account
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sdnc-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: sdnc
+  ports:
+    - protocol: TCP
+      port: 80 # to reach service, hit this
+      targetPort: 9002 # must be 5000 or same as defined in flask app
+      nodePort: 30088 # allows access from postman, http://192.168.99.107:30088/api/v1.0/task/id/3

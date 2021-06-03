@@ -1,0 +1,20 @@
+{
+  "gold": {
+    "qos_priority": 1,
+    "max_pkt_loss": 5e-3,
+    "min_margin": 0.05,
+    "max_margin": 0.2
+  },
+  "silver": {
+    "qos_priority": 2,
+    "max_pkt_loss": 1e-2,
+    "min_margin": 0.05,
+    "max_margin": 0.1
+  },
+  "bronze": {
+    "qos_priority": 3,
+    "max_pkt_loss": 5e-2,
+    "min_margin": 0.01,
+    "max_margin": 0.05
+  }
+}

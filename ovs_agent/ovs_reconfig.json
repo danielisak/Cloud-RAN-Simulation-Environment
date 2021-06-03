@@ -1,0 +1,20 @@
+{
+  "metadata": {},
+  "interfaces": {
+    "gold": {
+      "bandwidth": 150,
+      "burst": 10,
+      "buffer": 0.1
+    },
+    "silver": {
+      "bandwidth": 350,
+      "burst": 20,
+      "buffer": 0.1
+    },
+    "bronze": {
+      "bandwidth": 250,
+      "burst": 30,
+      "buffer": 0.1
+    }
+  }
+}
