@@ -1,0 +1,110 @@
+{
+  "frame1": {
+    "vm1": {
+      "metadata": { "node_name": { "key": "node-vm1" } },
+      "interfaces": {
+        "gold": {
+          "nbr_of_pods": 1,
+          "avg_bw": 5,
+          "std_bw": 0,
+          "perf_time": 180,
+          "qos_bridge": "gold-net-nad",
+          "perf_dest_ip": "30.30.30.30"
+        },
+        "silver": {
+          "nbr_of_pods": 1,
+          "avg_bw": 5,
+          "std_bw": 0,
+          "perf_time": 180,
+          "qos_bridge": "silver-net-nad",
+          "perf_dest_ip": "29.29.29.29"
+        },
+        "bronze": {
+          "nbr_of_pods": 1,
+          "avg_bw": 5,
+          "std_bw": 0,
+          "perf_time": 180,
+          "qos_bridge": "bronze-net-nad",
+          "perf_dest_ip": "28.28.28.28"
+        }
+      }
+    },
+    "vm2": {
+      "metadata": { "node_name": { "key": "node-vm2" } },
+      "interfaces": {
+        "gold": {
+          "nbr_of_pods": 1,
+          "avg_bw": 5,
+          "std_bw": 0,
+          "perf_time": 180,
+          "qos_bridge": "gold-net-nad",
+          "perf_dest_ip": "30.30.30.30"
+        },
+        "silver": {
+          "nbr_of_pods": 1,
+          "avg_bw": 5,
+          "std_bw": 0,
+          "perf_time": 180,
+          "qos_bridge": "silver-net-nad",
+          "perf_dest_ip": "29.29.29.29"
+        },
+        "bronze": {
+          "nbr_of_pods": 1,
+          "avg_bw": 5,
+          "std_bw": 0,
+          "perf_time": 180,
+          "qos_bridge": "bronze-net-nad",
+          "perf_dest_ip": "28.28.28.28"
+        }
+      }
+    }
+  },
+  "frame2": { "delay": 30 },
+  "frame3": {
+    "vm1": {
+      "metadata": { "node_name": { "key": "node-vm1" } },
+      "interfaces": {
+        "gold": {
+          "nbr_of_pods": 3,
+          "avg_bw": 10,
+          "std_bw": 0,
+          "perf_time": 30,
+          "qos_bridge": "gold-net-nad",
+          "perf_dest_ip": "30.30.30.30"
+        }
+      }
+    }
+  },
+  "frame4": { "delay": 30 },
+  "frame5": {
+    "vm2": {
+      "metadata": { "node_name": { "key": "node-vm2" } },
+      "interfaces": {
+        "silver": {
+          "nbr_of_pods": 3,
+          "avg_bw": 10,
+          "std_bw": 0,
+          "perf_time": 30,
+          "qos_bridge": "silver-net-nad",
+          "perf_dest_ip": "29.29.29.29"
+        }
+      }
+    }
+  },
+  "frame6": { "delay": 30 },
+  "frame7": {
+    "vm1": {
+      "metadata": { "node_name": { "key": "node-vm1" } },
+      "interfaces": {
+        "bronze": {
+          "nbr_of_pods": 3,
+          "avg_bw": 10,
+          "std_bw": 0,
+          "perf_time": 30,
+          "qos_bridge": "bronze-net-nad",
+          "perf_dest_ip": "28.28.28.28"
+        }
+      }
+    }
+  }
+}
