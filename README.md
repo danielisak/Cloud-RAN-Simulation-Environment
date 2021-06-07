@@ -9,7 +9,9 @@ Furthermore a netplan has to be created on the virtual machines to specify which
 Finally a CRD in Kubernetes has to be created for each traffic class. In the CRD one has to specify the range for the subnet for that traffic class. Example:
 
 gold =  30.30.0.1 to 30.30.30.30
+
 silver =  29.29.0.1 to 29.29.29.29
+
 bronze =  28.28.0.1 to 28.28.28.28
 
 ## Open vSwitch (OVS)
