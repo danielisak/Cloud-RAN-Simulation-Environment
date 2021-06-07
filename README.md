@@ -1,4 +1,4 @@
-# Cloud-RAN-Simulation-Environment
+# Cloud-RAN Simulation Environment
 This is a Cloud RAN simulation environment for dynamic bandwidth control, developed as part of a master thesis at Lunds Tekniska Högskola. The preparations necessary to run the simulation environment can be found below. For an in-depth description of the functionality and architecture of the setup, the thesis report is available at [LINK]. 
 
 ## Virtual Machine Setup
