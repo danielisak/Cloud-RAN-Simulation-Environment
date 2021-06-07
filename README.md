@@ -8,8 +8,21 @@ TBU
 
 ## Open vSwitch
 In VM4, install the latest OVS version.
-Configure the OVS according to 
-TBU
+Configure the OVS to handle three separate veth-pairs, one for each traffic class. Example:
+
+*
+ip link add [veth_0] type veth peer name [veth_1]
+ip link set [veth_0] up
+ip link set [veth_1] up
+ovs-vsctl add-port [ovs_name] [veth_0] 
+ip a add [IP_dest_address] dev [veth_1]
+*
+
+This enables you to direct the traffic to the specified [IP_dest_address]. In this simulation environment these are set to:
+gold = 30.30.30.30/16
+silver = 29.29.29.29/16
+bronze = 28.28.28.28/16
+
 
 ## Running the Simulation
 1. Run the simulation_scripts/iperf-server-script.py with one of the Use Case yaml files as an argument, they are located in the simulation folder. Or write your own yaml files for a customized traffic flow. Do this on the same VM you installed the OVS.
@@ -18,8 +31,12 @@ TBU
 4. Run the simulation_scripts/simulation.py with the same Use case yaml as in step one as an argument. Do this on any of VM1. 
 
 ## Retrieving the simulation results
-To obtain the simulation data recorded by the SDN controller you need to copy the csv file inside the pod to your computer.
-TBU
+To obtain the simulation data recorded by the SDN controller you need to copy the csv file inside the pod to your virtual machine file system.
+An example command for this would be 
+
+*
+kubectl cp [name_of_sdnc_pod]:[dest_file_path] [dest_file_name]
+*
 
 ## Cleaning up
 After each simulation run, the simulation_scripts/iperf-killer.py on VM4.
