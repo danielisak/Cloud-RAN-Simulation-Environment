@@ -23,16 +23,15 @@ spec:
         - name: SERVICE_PORT_ENV_NAME
           value: "6443"
         - name: SDNC_CONTROL_INTERVAL
-          value: "2"
+          value: "3"
         - name: GOLD_MARGIN
-          value: "0.1"
+          value: "0.0"
         - name: SILVER_MARGIN
-          value: "0.1"
+          value: "0.0"
         - name: BRONZE_MARGIN
-          value: "0.1"
-        # securityContext:
-        #   capabilities:
-        #     add: [NET_ADMIN]
+          value: "0.0"
+      nodeSelector:
+        key: node-vm3 
       serviceAccountName: sdnc-svc-account
 ---
 apiVersion: v1
@@ -47,4 +46,4 @@ spec:
     - protocol: TCP
       port: 80 # to reach service, hit this
       targetPort: 9002 # must be 5000 or same as defined in flask app
-      nodePort: 30088 # allows access from postman, http://192.168.99.107:30088/api/v1.0/task/id/3
+      nodePort: 30088  
