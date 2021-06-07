@@ -2,7 +2,7 @@
 This is a cloud RAN simulation environment developed for dynamic bandwidth allocation as part of a master thesis. To run the simulation environment some preparations are necessary. For an in-depth description of the functionality and architecture of the setup, the thesis report is available at [LINK]. 
 
 ## Virtual Machine Setup
-Four virtual machines are needed to run the environment setup. In the original setup, VirtualBox was used. When the VMs are up and running, networking settings need to be configured to allow for three separate vLANs between the VMs. This is to allow for each traffic class to be separated on different vLANs. This can be done in the networking settings via the VirtualBox GUI.
+Four virtual machines based on Ubuntu are needed to run the environment setup. In the original setup, VirtualBox was used. When the VMs are up and running, networking settings need to be configured to allow for three vLANs between the VMs. This is to allow for each traffic class to be separated on different vLANs. This can be done in the networking settings via the VirtualBox GUI.
 
 Furthermore a netplan has to be created on the virtual machines to specify which network interface should be assigned to each traffic class. 
 
