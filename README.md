@@ -10,18 +10,24 @@ TBU
 In VM4, install the latest OVS version.
 Configure the OVS to handle three separate veth-pairs, one for each traffic class. Example:
 
-*
-ip link add [veth_0] type veth peer name [veth_1]
+
+ip link add [veth_0] type veth peer name [veth_1] 
+
 ip link set [veth_0] up
+
 ip link set [veth_1] up
+
 ovs-vsctl add-port [ovs_name] [veth_0] 
-ip a add [IP_dest_address] dev [veth_1]
-*
+
+ip a add [IP_dest_address] dev [veth_1] 
+
 
 This enables you to direct the traffic to the specified [IP_dest_address]. In this simulation environment these are set to:
-gold = 30.30.30.30/16
+gold = 30.30.30.30/16 
+
 silver = 29.29.29.29/16
-bronze = 28.28.28.28/16
+
+bronze = 28.28.28.28/16 
 
 
 ## Running the Simulation
